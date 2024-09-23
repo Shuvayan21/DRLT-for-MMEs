@@ -1,5 +1,4 @@
 # DRLT-for-MMEs
-Simulation files for http://arxiv.org/abs/2409.05345
 This folder contains the matlab codes for the simulations shown in the paper "Robust Non-adaptive Group Testing under Errors in
 Group Membership Specifications" to be submitted to IEEE Transactions in Information Theory journal. Current version of this paper is submitted it arxiv in the following link: http://arxiv.org/abs/2409.05345 .
 
