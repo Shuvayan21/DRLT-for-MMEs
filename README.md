@@ -55,4 +55,3 @@ Now we describe the files that is used to obtain the figures and tables of the s
 	II) f_sp vs Sensitivity and Specificity of beta (Fig 3 (bottom-right)) 
 	III) f_sp vs RRMSE (Fig 4 (bottom-right))
 
-This concludes the readme.txt
