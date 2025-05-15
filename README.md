@@ -58,6 +58,8 @@ gen_ggd_inv.m - function to obtain a sample from the generalise gaussian distrib
 
 generalised_gaussian_cdf.m - function to obtain a generalised gaussian cdf with given parameters.
 
+sample_ct.m - function to obtain a random sample of ct-cycle values.
+
 Now we describe the files that is used to obtain the figures and tables of the simulations given in the paper. Note that for all these figures the pre-set true sensing matrix A and the weight matrix W is already provided as .mat files for different n. The nomenclature of the .mat files W_.mat and A_.mat respectively where n is the corresponding measurements. Furthermore, while running one can choose to use the pre-set matrices given or they can generate their own matrices and re-run the optimisation algorithm for W again using the 'flag' variable given in all of the upcoming codes.
 
 Figure_1_QQPlots.m - code to generate the QQPlots of T_{Gj} and T_{Hi} of Figure 1 as described in Section IV-C of the paper.
