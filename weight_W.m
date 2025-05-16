@@ -33,7 +33,7 @@ function W = weight_W(A)
         C3 = scale * (A * Wmat' / n - p * I_n / n);
         r_c3 = penalty_scale * max(0, abs(C3(:)) - mu_3);
 
-        % === Constraint 4: column norms ≤ 1 (ℓ2-norm)
+        % === Constraint 0: column norms ≤ 1 (ℓ2-norm)
         r_c4 = zeros(p, 1);
         for j = 1:p
             col_norm = norm(Wmat(:, j))^2 / n;
