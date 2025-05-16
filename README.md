@@ -6,11 +6,11 @@ Note that detailed description of all the functions and simulation files are pro
 
 calculateSensitivitySpecificity.m - Given a true vector x and an estimated vector x_l, this function evaluates the sensitivity and specificity of x_l by choosing a threshold that maximised Youden's Index (Sensitivity+Specificity-1).
 
-CV_Drlt.m - Cross validation function to generate regularisation parameters lambda_1 and lambda_2 for the Drlt and Odrlt methods using the same procedure as described in Sec.V of the paper.
+CV_Drlt.m - Cross validation function to generate regularisation parameters lambda_1 and lambda_2 for the Drlt and Odrlt methods using the same procedure as described in Sec.IV of the paper.
 
-CV_l1.m - Cross validation function to generate regularisation parameter l1 for L1-Lasso as described in Sec.V-E of the paper.
+CV_l1.m - Cross validation function to generate regularisation parameter l1 for L1-Lasso as described in Sec.IV-E of the paper.
 
-CV_l2.m - Cross validation function to generate regularisation parameter l2 for L2-Lasso as described in Sec.V-E of the paper.
+CV_l2.m - Cross validation function to generate regularisation parameter l2 for L2-Lasso as described in Sec.IV-E of the paper.
 
 CV_RL.m - Cross validation function to generate regularisation parameters lamb_1 and lamb_2 for Robust Lasso algorithm given in Eqn.(6) of the paper.
 
