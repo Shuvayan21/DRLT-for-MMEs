@@ -1,6 +1,6 @@
 function x_hat=Distance_Decoder(A, A_tilde, x, p, q)
     o_vec = ones(50,p);
-    A = [A ; o_vec]
+    A = [A ; o_vec];
     [m,n]=size(A);
     M_c=A;
     M_s=A_tilde;
@@ -21,3 +21,4 @@ function x_hat=Distance_Decoder(A, A_tilde, x, p, q)
 
 
 end
+
