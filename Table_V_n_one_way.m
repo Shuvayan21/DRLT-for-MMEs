@@ -23,8 +23,9 @@ x=abs(beta)>0;
     Spec_DistD(l,1)=mean(Spec_beta);
     % generating the inverse W matrix
     W=weight_W(A);
-[~, ~, Sens_beta, Spec_beta, ~] = results_Sens_Spec_RRMSE_gauss(A_tilde, A, beta, delta, sigma, W);
+[~, ~, Sens_beta, Spec_beta, ~] = results_Sens_Spec_RRMSE_gauss(B_tilde, B, A_tilde, A, beta, delta, sigma, W);
 Sens_Odrlt(l,1)=mean(Sens_beta);
 Spec_Odrlt(l,1)=mean(Spec_beta);
 
 end
+
