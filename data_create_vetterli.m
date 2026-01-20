@@ -1,4 +1,4 @@
-function [A,A_hat,beta,delta,sigma]=data_create_vetterli(n,p,f_sig,f_sp,alpha,theta)
+function [B,B_hat,A,A_hat,beta,delta,sigma]=data_create_vetterli(n,p,f_sig,f_sp,alpha,theta)
     %rng(1) %setting seed
     s=floor(p*f_sp); % sparsity level of \beta
     beta = zeros(p, 1);
@@ -8,13 +8,17 @@ function [A,A_hat,beta,delta,sigma]=data_create_vetterli(n,p,f_sig,f_sp,alpha,th
     beta(S(floor(0.4*s)+1:s)) =500+500*rand(s-floor(0.4*s),1);
     % 0/1 pooling matrix
     q = alpha / s;
-    A = double(rand(n, p) < q);
+    B = double(rand(n, p) < q);
 
     % Generate sampling matrix A-hat by flipping 1s in A with probability (1-theta)
-    A_hat = A;
-    flip_mask = (rand(n, p) > theta) & (A == 1);
-    A_hat(flip_mask) = 0;
+    B_hat = B;
+    flip_mask = (rand(n, p) > theta) & (B == 1);
+    B_hat(flip_mask) = 0;
+    o_vec = zeros(p, 1);
+    A = B - o_vec * o_vec';
+    A_hat = B_hat - o_vec * o_vec';
     delta=(A_hat-A)*beta;
     %creating the standard deviation sigma
     sigma=mean(abs(A*beta))*f_sig;
+
 end
