@@ -1,4 +1,4 @@
-function [Sens_delta, Spec_delta, Sens_beta, Spec_beta, RRMSE] = results_Sens_Spec_RRMSE_gauss(A_tilde, A, beta, delta, sigma, W)
+function [Sens_delta, Spec_delta, Sens_beta, Spec_beta, RRMSE] = results_Sens_Spec_RRMSE_gauss(B_tilde, B, A_tilde, A, beta, delta, sigma, W)
     % This function evaluates the performance of different regression methods
     % based on sensitivity, specificity, and relative root mean square error (RRMSE).
     % 
@@ -20,11 +20,15 @@ function [Sens_delta, Spec_delta, Sens_beta, Spec_beta, RRMSE] = results_Sens_Sp
     rng(1) % Set random seed for reproducibility.
     [n, p] = size(A); % Get dimensions of the design matrix A.
     run = 25; % Number of runs for the simulation.
-    
+    one_beta = zeros(50,1);
     % Generate noise and compute the response variable.
     eta = random("normal", 0, sigma, [n 1]); % Generate normal noise.
-    y = A_tilde * beta + eta; % Response variable with noise.
-    
+    z = B_tilde * beta + eta; % Response variable with noise.
+    for i=1:1:50
+        one_beta = ones(p,1)*beta + random("normal", 0, sigma, [n 1]);
+    end
+    z_bar = mean(one_beta);
+    y = z - z_bar;
     % Cross-validation to determine optimal regularization parameters.
     [lambda_1, lambda_2] = CV_Drlt(y, A, W, sigma); % Cross-validation for ODRL.
     
@@ -122,3 +126,4 @@ function [Sens_delta, Spec_delta, Sens_beta, Spec_beta, RRMSE] = results_Sens_Sp
         
     end
 end
+
