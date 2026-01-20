@@ -14,7 +14,7 @@ function [B,B_hat,A,A_hat,beta,delta,sigma]=data_create_vetterli(n,p,f_sig,f_sp,
     B_hat = B;
     flip_mask = (rand(n, p) > theta) & (B == 1);
     B_hat(flip_mask) = 0;
-    o_vec = zeros(p, 1);
+    o_vec = ones(p, 1);
     A = B - o_vec * o_vec';
     A_hat = B_hat - o_vec * o_vec';
     delta=(A_hat-A)*beta;
@@ -22,3 +22,4 @@ function [B,B_hat,A,A_hat,beta,delta,sigma]=data_create_vetterli(n,p,f_sig,f_sp,
     sigma=mean(abs(A*beta))*f_sig;
 
 end
+
