@@ -1,7 +1,9 @@
 function x_hat=Distance_Decoder_two_way(A, A_tilde, x, p, q)
+    o_vec = ones(50,p);
+    A = [A ; o_vec];
     [m,n]=size(A);
-    M_c=(A+1)/2;
-    M_s=(A_tilde+1)/2;
+    M_c=A;
+    M_s=A_tilde;
     y = any(M_s(:, x==1), 2);  % vector of test results
 
     % 5. Distance decoder
@@ -16,5 +18,6 @@ function x_hat=Distance_Decoder_two_way(A, A_tilde, x, p, q)
             x_hat(i) = 1;
         end
     end
+
 
 end
