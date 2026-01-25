@@ -1,4 +1,4 @@
-This folder contains the matlab codes for the simulations shown in the paper "Robust Non-adaptive Group Testing under Errors in Group Membership Specifications" submitted to IEEE Transactions in Information Theory journal.
+This folder contains the matlab codes for the simulations shown in the paper "Robust Non-adaptive Group Testing under Errors in Group Membership Specifications" submitted to Information and Inference journal.
 
 This folder contains files than produce the figures and tables given in the paper. It also contains functions that are necessary to create the figures and tables. This folder also contains .mat files for the matrices used for simulations and the weight matrix obtained from the aforementioned matrices using the optimisation algorithm Alg.1 of the paper.
 
